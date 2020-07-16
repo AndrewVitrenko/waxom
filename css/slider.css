@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* Слайдер */
+.slick-slider {
+  position: relative;
+}
+
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Слайд */
+.slick-slide {
+  outline: none;
+}
+
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелка */
+.slick-arrow {
+  font-size: 0;
+  position: absolute;
+  z-index: 5;
+  top: 21.66667%;
+  background: none;
+  width: 0;
+  height: 0;
+  border: solid #d3c1ad;
+  border-width: 0 5px 5px 0;
+  padding: 22.5px;
+  outline: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+  left: 10px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+  right: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {
+  border-color: #a3a2a0;
+}
+
+/* Точки (булиты) */
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 20.30769%;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li:first-child {
+  margin-left: 0;
+}
+
+.slick-dots li:last-child {
+  margin-right: 0;
+}
+
+/* Активная точка */
+.slick-dots li.slick-active button {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #d3c1ad;
+}
+
+/* Элемент точки */
+.slick-dots li button {
+  font-size: 0;
+  padding: 0;
+  border: none;
+  height: 11px;
+  width: 11px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/*конкретный слайдер*/
