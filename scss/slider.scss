@@ -36,8 +36,9 @@
     width: 0;
     height: 0;
     border: solid #d3c1ad;
-    border-width: 0 5px 5px 0;
-    padding: 22.5px;
+    border-width: 0 calc(3px + 2 * ((100vw - 768px) / 1152)) calc(3px + 2 * ((100vw - 768px) / 1152)) 0;
+    //padding: 22.5px;
+    padding: calc(8px + 14.5 * ((100vw - 320px) / 1600));
     outline: none;
     transition: all 0.3s ease-out;
 }
@@ -63,7 +64,8 @@
     list-style: none;
     padding: 0;
     margin-bottom: 0;
-    margin-top: 330/1625*100%;
+    //margin-top: 330px;
+    margin-top: calc(50px + 280 * ((100vw - 768px) / 1152));
 }
 .slick-dots li{
     margin: 0 5px;

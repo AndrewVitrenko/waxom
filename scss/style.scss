@@ -1,3 +1,6 @@
+$maxWidth: 1920;
+@import "../../adaptiv-mixins.scss";
+
 $beige-01: #c7b299;
 $beige-02: #998675;
 $text-dark: #555555;
@@ -7,14 +10,16 @@ $text-dark: #555555;
     line-height: 0.76471;
 }
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
 }
 
 .title {
-    font-size: 30px;
-    font-family: 'Raleway', sans-serif;
+    //font-size: 30px;
+    @include adaptiv-font(30, 22);
+    font-family: "Raleway", sans-serif;
     text-transform: capitalize;
     text-align: center;
     font-weight: 700;
@@ -22,19 +27,22 @@ html, body {
 }
 
 .text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     line-height: 2;
     color: #8c8c8c;
-    font-size: 16px;
+    //font-size: 16px;
+    @include adaptiv-font(16, 14);
 }
 
 .button {
     text-transform: uppercase;
     font-size: 14px;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 700;
     color: white;
-    padding: 17.8px 36.77px;
+    //padding: 17.8px 36.77px;
+    @include adaptivVpadding(17.8, 17.8, 12, 12, 320);
+    @include adaptivHpadding(36.77, 36.77, 22, 22, 320);
     background-color: $beige-02;
     border-radius: 3px;
     border: 2px solid $beige-02;
@@ -44,7 +52,7 @@ html, body {
 }
 
 .button::after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     width: 100%;
@@ -75,14 +83,14 @@ html, body {
     text-decoration: none;
     font-size: 14px;
     white-space: nowrap;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .link:after {
-    content: '';
+    content: "";
     border: 4.5px solid transparent;
     display: inline-block;
-    margin-left: 10/85*100%;
+    margin-left: 10/85 * 100%;
     border-left: 5px solid;
 }
 
@@ -91,10 +99,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 40px 365px 40px 375px;
+    //padding: 40px 365px 40px 375px;
     display: flex;
     flex-direction: row;
     z-index: 50;
+    @include adaptivVpadding(40, 40, 25, 25, 768);
+    @include adaptivHpadding(375, 365, 10, 10, 768);
 }
 
 .logo {
@@ -104,16 +114,22 @@ header {
 
     &__text {
         color: white;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         text-transform: capitalize;
-        font-size: 34px;
+        //font-size: 34px;
+        @include adaptiv-font(34, 22);
         font-weight: 400;
+    }
+
+    &__img {
+        @include adaptiv-height(56, 45, 768);
     }
 }
 
 .nav {
     flex-shrink: 0;
-    flex-basis: 635/1180*100%;
+    flex-basis: 635/1180 * 100%;
+    min-width: 500px;
     margin-left: auto;
 
     &__list {
@@ -128,7 +144,7 @@ header {
 
     &__item {
         font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         height: 100%;
         display: flex;
         flex-direction: row;
@@ -164,8 +180,8 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex-basis: 70/1180*100%;
-        margin-left: 63/1180*100%;
+        flex-basis: 70/1180 * 100%;
+        margin-left: 63/1180 * 100%;
     }
 
     &__button {
@@ -176,7 +192,8 @@ header {
 }
 
 .banner {
-    padding-top: 383/1920*100%;
+    //padding-top: 383px;
+    @include adaptivVpadding(383, 0, 125, 0, 768);
 }
 
 .slider {
@@ -184,27 +201,30 @@ header {
     color: white;
 
     &__slogan {
-        font-family: 'Raleway', sans-serif;
-        font-size: 36px;
+        font-family: "Raleway", sans-serif;
+        //font-size: 36px;
+        @include adaptiv-font(36, 25);
         margin-top: 0;
-        margin-bottom: 20/1625*100%;
+        margin-bottom: 20/1625 * 100%;
         letter-spacing: 1px;
     }
 
     &__title {
-        font-size: 52px;
+        //font-size: 52px;
+        @include adaptiv-font(52, 40);
         margin-top: 0;
         color: inherit;
-        margin-bottom: 25/1625*100%;
+        margin-bottom: 25/1625 * 100%;
     }
 
     &__description {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+        //font-size: 16px;
+        @include adaptiv-font(16, 14);
         line-height: normal;
         letter-spacing: 1px;
         margin-top: 0;
-        margin-bottom: 50/1625*100%;
+        margin-bottom: 50/1625 * 100%;
     }
 
     &__button {
@@ -213,7 +233,8 @@ header {
 }
 
 .wrapper {
-    padding: 0 147.5px;
+    //padding: 0 147.5px;
+    @include adaptivHpadding(147.5, 147.5, 20, 20, 768);
 }
 
 .service {
@@ -222,11 +243,14 @@ header {
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
-    padding: 80px 375px;
+    //padding: 80px 375px;
+    @include adaptivVpadding(80, 80, 40, 40, 768);
+    @include adaptivHpadding(375, 375, 40, 40, 768);
     color: $text-dark;
 
     &__item {
-        flex-basis: 270/1170*100%;
+        flex-basis: 270/1170 * 100%;
+        min-width: 200px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -234,7 +258,7 @@ header {
     }
 
     &__line {
-        width: 70/270*100%;
+        width: 70/270 * 100%;
         margin: 0;
         margin-top: auto;
         height: 3px;
@@ -246,7 +270,7 @@ header {
     &__title {
         flex-basis: 100%;
         font-size: 22px;
-        margin: 25/270*100% 0;
+        margin: 25/270 * 100% 0;
         font-weight: 600;
     }
 
@@ -270,7 +294,10 @@ header {
 .poster {
     background-color: #fbfaf8;
     text-align: center;
-    padding-top: 80px;
+    //padding-top: 80px;
+    //padding: 0 345px;
+    @include adaptivHpadding(345, 345, 0, 0, 768);
+    @include adaptivVpadding(80, 0, 30, 0, 768);
 
     &__title {
         text-transform: none;
@@ -279,28 +306,37 @@ header {
 
     &__text {
         margin-top: 0;
-        padding: 0 570px;
-        margin-bottom: 40/1920*100%;
+        //padding: 0 225px;
+        @include adaptivHpadding(225, 225, 0, 0, 768);
+        margin-bottom: 40/1920 * 100%;
+    }
+
+    &__img {
+        width: 100%;
     }
 }
 
 .offer {
-    background: linear-gradient(90deg, rgba(33,27,25,1) 0%, rgba(78,52,39,1) 100%);
+    background: linear-gradient(90deg, rgba(33, 27, 25, 1) 0%, rgba(78, 52, 39, 1) 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 50px 375px;
+    //padding: 50px 375px;
+    @include adaptivVpadding(50, 50, 25, 25, 768);
+    @include adaptivHpadding(375, 375, 25, 25, 768);
 
     &__button {
-        padding-left: 28px;
-        padding-right: 28px;
+        /*padding-left: 28px;
+        padding-right: 28px;*/
+        @include adaptivHpadding(28, 28, 19, 19, 320);
         margin-left: auto;
     }
 
     &__title {
         margin-top: 0;
-        margin-bottom: 15/524*100%;
-        font-size: 28px;
+        margin-bottom: 15/524 * 100%;
+        //font-size: 28px;
+        @include adaptiv-font(28, 22);
         color: white;
         font-weight: 400;
     }
@@ -317,21 +353,24 @@ header {
 
 .projects {
     text-align: center;
-    padding: 80px 375px;
+    //padding: 80px 375px;
+    @include adaptivVpadding(80, 80, 40, 40, 768);
+    @include adaptivHpadding(375, 375, 20, 20, 768);
 
     &__title {
         margin-top: 0;
     }
 
     &__text {
-        padding: 0 175px;
+        //padding: 0 175px;
+        @include adaptivHpadding(175, 175, 0, 0, 768);
         margin-top: 0;
-        margin-bottom: 40/1170*100%;
+        margin-bottom: 40/1170 * 100%;
     }
 
     &__filter {
         margin-top: 0;
-        margin-bottom: 40/1170*100%;
+        margin-bottom: 40/1170 * 100%;
     }
 
     &__container {
@@ -339,20 +378,22 @@ header {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 40/1170*100%;
+        margin-bottom: 40/1170 * 100%;
     }
 
     &__item {
-        flex-basis: 370/1170*100%;
+        flex-basis: 370/1170 * 100%;
     }
 
-    &__item:nth-child(1), &__item:nth-child(2), &__item:nth-child(3) {
-        margin-bottom: 30/1170*100%;
+    &__item:nth-child(1),
+    &__item:nth-child(2),
+    &__item:nth-child(3) {
+        margin-bottom: 30/1170 * 100%;
     }
-    
+
     &__photo {
         position: relative;
-        
+
         img {
             width: 100%;
         }
@@ -382,23 +423,24 @@ header {
 
     &__name {
         margin-top: 0;
-        margin-bottom: 10/310*100%;
-        font-family: 'Raleway', sans-serif;
+        margin-bottom: 10/310 * 100%;
+        font-family: "Raleway", sans-serif;
         font-size: 20px;
         color: $beige-01;
         transition: all 0.3s ease-out;
+        line-height: normal;
     }
 
     &__category {
         margin: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         color: #d1d1d1;
         transition: all 0.3s ease-out;
     }
 
     .text__container:before {
-        content: '';
+        content: "";
         position: absolute;
         border: 15px solid transparent;
         border-bottom: 10px solid #fbfaf8;
@@ -438,7 +480,7 @@ header {
     border: none;
     padding: 0;
     background: none;
-    margin: 0 15/370*100%;
+    margin: 0 15/370 * 100%;
 }
 
 .filter {
@@ -453,7 +495,7 @@ header {
         text-transform: capitalize;
         color: #8c8c8c;
         font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         border: 1px solid #ebebeb;
         border-radius: 4px;
         padding: 10px 20px;
@@ -469,45 +511,47 @@ header {
 
     &__item:hover {
         background: $beige-02;
-        color: white; 
+        color: white;
     }
 }
 
 .presentation {
     position: relative;
-    background: linear-gradient(90deg, rgba(33,27,25,0.8) 0%, rgba(78,52,39,0.8) 100%);
+    background: linear-gradient(90deg, rgba(33, 27, 25, 0.8) 0%, rgba(78, 52, 39, 0.8) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     text-align: center;
-    padding: 0 675px;
-    
+    //padding: 0 675px;
+    @include adaptivHpadding(675, 675, 50, 50, 768);
 
     &__logo {
-        padding: 15px;
+        //padding: 15px;
+        @include adaptivVpadding(15, 15, 10, 10, 768);
+        @include adaptivHpadding(15, 15, 10, 10, 768);
+        @include adaptiv-height(100, 65, 768);
         border-radius: 50%;
         background: rgba($color: #000000, $alpha: 0.2);
-        margin-bottom: 40/570*100%;
+        margin-bottom: 40/570 * 100%;
     }
 
     &__title {
         color: white;
         font-weight: 500;
         margin-top: 0;
-        margin-bottom: 25/570*100%;
+        margin-bottom: 25/570 * 100%;
     }
 
     &__text {
         margin-top: 0;
         color: white;
-        margin-bottom: 40/570*100%;
+        margin-bottom: 40/570 * 100%;
     }
 
     &__duration {
         font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         color: $beige-01;
         font-weight: 600;
         letter-spacing: 1px;
@@ -516,7 +560,9 @@ header {
 
 .mobile {
     display: flex;
-    padding: 80px 380px 0 420px;
+    //padding: 80px 380px 0 420px;
+    @include adaptivVpadding(80, 80, 40, 40, 768);
+    @include adaptivHpadding(420, 380, 100, 100, 768);
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -526,17 +572,17 @@ header {
         text-transform: none;
         text-align: left;
         margin-top: 0;
-        margin-bottom: 40/697*100%;
+        margin-bottom: 40/697 * 100%;
     }
 
     &__text {
         line-height: 1.5;
-        margin-bottom: 40/697*100%;
+        margin-bottom: 40/697 * 100%;
         margin-top: 0;
     }
 
     &__feature {
-        margin-top: 120/1120*100%;
+        margin-top: 120/1120 * 100%;
     }
 }
 
@@ -545,62 +591,67 @@ header {
         list-style: none;
         padding-left: 50px;
         margin: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         color: #8c8c8c;
     }
 
     &__item {
-        margin-bottom: 20/647*100%;
+        margin-bottom: 20/647 * 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        line-height: normal;
     }
 
     &__item::before {
         content: url(../img/arrow.png);
-        margin-right: 30/647*100%;
+        margin-right: 30/647 * 100%;
     }
 }
 
 .counters {
-    background: linear-gradient(90deg, rgba(33,27,25,1) 0%, rgba(78,52,39, 1) 100%);
+    background: linear-gradient(90deg, rgba(33, 27, 25, 1) 0%, rgba(78, 52, 39, 1) 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 70px 495px 60px;
+    //padding: 70px 495px 60px;
+    @include adaptivVpadding(70, 60, 50, 35, 768);
+    @include adaptivHpadding(495, 495, 75, 75, 768);
     text-align: center;
 
     &__item {
-        flex-basis: 140/930*100%;
+        flex-basis: 140/930 * 100%;
     }
 
     &__image {
-        margin-bottom: 30/140*100%;
+        margin-bottom: 30/140 * 100%;
     }
 
     &__number {
         display: block;
         color: white;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 48px;
+        font-family: "Montserrat", sans-serif;
+        //font-size: 48px;
+        @include adaptiv-font(48, 30);
         font-weight: 300;
-        margin-bottom: 20/140*100%;
+        margin-bottom: 20/140 * 100%;
     }
 
     &__name {
         margin: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         text-transform: uppercase;
         font-size: 14px;
         color: $beige-01;
+        line-height: normal;
     }
 
     &__line {
         border: none;
         margin-bottom: 0;
-        margin-top: 30/140*100%;
+        margin-top: 30/140 * 100%;
         width: 30px;
         height: 2px;
         color: white;
@@ -609,19 +660,22 @@ header {
 }
 
 .posts {
-    padding: 80px 375px;
+    //padding: 80px 375px;
+    @include adaptivVpadding(80, 80, 40, 40, 768);
+    @include adaptivHpadding(375, 375, 50, 50, 768);
     text-align: center;
 
     &__text {
-        padding: 0 175px;
+        //padding: 0 175px;
+        @include adaptivHpadding(175, 175, 0, 0, 768);
         margin-top: 0;
         line-height: 1.7;
-        margin-bottom: 35/1170*100%;
+        margin-bottom: 35/1170 * 100%;
     }
 
     &__title {
         margin-top: 0;
-        margin-bottom: 30/1170*100%;
+        margin-bottom: 30/1170 * 100%;
         font-weight: 600;
     }
 
@@ -630,26 +684,30 @@ header {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 40/1170*100%;
+        margin-bottom: 40/1170 * 100%;
     }
 
     &__item {
-        flex-basis: 370/1170*100%;
+        flex-basis: 370/1170 * 100%;
     }
 
     &__photo {
         position: relative;
+
+        img {
+            @include adaptiv-width(370, 280, 768);
+        }
     }
 
     &__photo:after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         //background: rgba($color: #000000, $alpha: 0.7);
-        background: linear-gradient(90deg, rgba(33,27,25,0.8) 0%, rgba(78,52,39,0.8) 100%);
+        background: linear-gradient(90deg, rgba(33, 27, 25, 0.8) 0%, rgba(78, 52, 39, 0.8) 100%);
         transition: all 0.3s ease-out;
         opacity: 0;
         z-index: 10;
@@ -657,8 +715,8 @@ header {
 
     &__date {
         position: absolute;
-        top: 20/220*100%;
-        left: 20/370*100%;
+        top: 20/220 * 100%;
+        left: 20/370 * 100%;
         height: 60px;
         width: 50px;
         z-index: 11;
@@ -666,12 +724,12 @@ header {
 
     &__day {
         display: flex;
-        height: 35/60*100%;
+        height: 35/60 * 100%;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         font-size: 24px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         color: white;
         background-color: #363636;
         border-radius: 3px 3px 0 0;
@@ -688,9 +746,9 @@ header {
         color: white;
         font-size: 12px;
         text-transform: capitalize;
-        height: 25/60*100%;
+        height: 25/60 * 100%;
         border-radius: 0 0 3px 3px;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         letter-spacing: 1px;
         transition: all 0.3s ease-out;
         font-weight: 400;
@@ -707,22 +765,23 @@ header {
 
     &__name {
         margin-top: 0;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         font-size: 20px;
         color: $text-dark;
         font-weight: 600;
         transition: all 0.3s ease-out;
-        margin-bottom: 20/306*100%;
+        margin-bottom: 20/306 * 100%;
+        line-height: normal;
     }
 
     &__description {
         font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         color: #8c8c8c;
         line-height: 1.5;
         margin-top: 0;
         transition: all 0.3s ease-out;
-        margin-bottom: 30/306*100%;
+        margin-bottom: 30/306 * 100%;
     }
 
     &__link {
@@ -735,7 +794,7 @@ header {
 
     &__previous {
         display: inline-block;
-        margin-right: 10/1170*100%;
+        margin-right: 10/1170 * 100%;
     }
 }
 
@@ -769,13 +828,18 @@ header {
 
 .partners {
     position: relative;
-    background: linear-gradient(90deg, rgba(33,27,25,0.8) 0%, rgba(78,52,39,0.8) 100%);
+    background: linear-gradient(90deg, rgba(33, 27, 25, 0.8) 0%, rgba(78, 52, 39, 0.8) 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 400px;
+    //padding: 0 400px;
+    @include adaptivHpadding(400, 400, 40, 40, 768);
+
+    &__image {
+        @include adaptiv-width(210, 100, 768);
+    }
 }
 
 footer {
@@ -788,14 +852,16 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 80px 375px;
+    //padding: 80px 375px; 
+    @include adaptivHpadding(375, 375, 50, 50, 768);
+    @include adaptivVpadding(80, 80, 40, 40, 768);
 
     &__label {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin-bottom: 25/258*100%;
+        margin-bottom: 25/258 * 100%;
     }
 
     &__text {
@@ -803,11 +869,18 @@ footer {
         line-height: 1.5;
         font-size: 14px;
         margin-top: 0;
-        margin-bottom: 30/258*100%;
+        margin-bottom: 30/258 * 100%;
+        transition: all 0.3s ease-out;
+    }
+
+    &__main:hover {
+        .info__text {
+            color: $beige-01;
+        }
     }
 
     &__main {
-        flex-basis: 258/1170*100%;
+        flex-basis: 258/1170 * 100%;
         flex-shrink: 0;
     }
 
@@ -820,7 +893,7 @@ footer {
     }
 
     &__link:after {
-        border-left-color: #d1d1d1;;
+        border-left-color: #d1d1d1;
     }
 
     .text {
@@ -828,14 +901,14 @@ footer {
     }
 
     &__posts {
-        flex-basis: 271/1170*100%;
+        flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
     }
 
     &__title {
         font-size: 24px;
         color: white;
-        margin-bottom: 33/271*100%;
+        margin-bottom: 33/271 * 100%;
         display: block;
         text-align: left;
     }
@@ -846,24 +919,24 @@ footer {
             height: auto;
             width: auto;
             color: #363636;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 12px;
             margin-top: 0;
-            margin-bottom: 10/271*100%;
+            margin-bottom: 10/271 * 100%;
             transition: all 0.3s ease-out;
             font-weight: 300;
         }
 
         &__text {
             color: $text-dark;
-            margin-bottom: 20/271*100%;
+            margin-bottom: 20/271 * 100%;
             transition: all 0.3s ease-out;
             font-size: 14px;
         }
 
         &__item {
             border-bottom: 1px solid #252525;
-            margin-bottom: 20/271*100%;
+            margin-bottom: 20/271 * 100%;
         }
 
         &__item:last-child {
@@ -885,14 +958,15 @@ footer {
     }
 
     &__twitter {
-        flex-basis: 272/1170*100%;
+        flex-basis: 272/1170 * 100%;
     }
 
     .twitter {
         &__text {
             color: $text-dark;
             font-size: 14px;
-            margin-bottom: 11/272*100%;
+            margin-bottom: 11/272 * 100%;
+            transition: all 0.3s ease-out;
         }
 
         &__link {
@@ -905,26 +979,39 @@ footer {
 
         &__date {
             color: #363636;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 12px;
             font-weight: 300;
             line-height: 20px;
-            margin-bottom: 23/272*100%;
+            margin-bottom: 23/272 * 100%;
+            transition: all 0.3s ease-out;
         }
 
         &__item {
             border-bottom: 1px solid #252525;
-            margin-bottom: 20/272*100%;
+            margin-bottom: 20/272 * 100%;
         }
 
         &__item:last-child {
             border: none;
             margin-bottom: 0;
         }
+
+        &__item:hover {
+            .twitter {
+                &__text {
+                    color: $beige-01;
+                }
+
+                &__date {
+                    color: white;
+                }
+            }
+        }
     }
 
     &__widget {
-        flex-basis: 271/1170*100%;
+        flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
     }
 
@@ -937,9 +1024,13 @@ footer {
         }
 
         &__item {
-            flex-basis: 130/271*100%;
+            flex-basis: 130/271 * 100%;
             flex-shrink: 0;
-            margin-bottom: 10/271*100%;
+            margin-bottom: 10/271 * 100%;
+
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -949,13 +1040,16 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 45px 375px 52px;
+    //padding: 45px 375px 52px;
+    @include adaptivHpadding(375, 375, 50, 50, 768);
+    @include adaptivVpadding(45, 52, 30, 35, 768);
 
     p {
         margin: 0;
         color: $text-dark;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
+        line-height: normal;
     }
 
     &__label {
@@ -968,5 +1062,62 @@ footer {
 
     &__name {
         color: #959595;
+    }
+}
+
+//-------media-querities--------
+
+@media all and (max-width: 1683px) {
+    .posts {
+        &__container {
+            justify-content: space-around;
+        }
+
+        &__item {
+            margin-bottom: 5%;
+        }
+    }
+}
+
+@media all and (max-width: 1100px) {
+    .header {
+        &__buttons {
+            margin-left: 4%;
+            flex-basis: 80/1180 * 100%;
+        }
+    }
+
+    .presentation {
+        &__logo {
+            margin-bottom: 4%;
+        }
+
+        &__title {
+            margin-bottom: 3%;
+        }
+
+        &__text {
+            margin-bottom: 4%;
+        }
+    }
+
+    .mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__image,
+        img {
+            width: 75%;
+        }
+    }
+}
+
+@media all and (max-width: 1035px) {
+    .service {
+        justify-content: space-around;
+
+        &__item {
+            margin-bottom: 5%;
+        }
     }
 }
