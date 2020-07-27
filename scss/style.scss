@@ -903,6 +903,7 @@ footer {
     &__posts {
         flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
+        margin-top: 28/1170*100%;
     }
 
     &__title {
@@ -959,6 +960,7 @@ footer {
 
     &__twitter {
         flex-basis: 272/1170 * 100%;
+        margin-top: 28/1170*100%;
     }
 
     .twitter {
@@ -1013,6 +1015,7 @@ footer {
     &__widget {
         flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
+        margin-top: 28/1170*100%;
     }
 
     .widget {
@@ -1118,6 +1121,31 @@ footer {
 
         &__item {
             margin-bottom: 5%;
+        }
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .info {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__main {
+            flex-basis: 45%;
+            margin-bottom: 5%;
+        }
+
+        &__posts {
+            flex-basis: 35%;
+            margin-bottom: 5%;
+        }
+
+        &__twitter {
+            flex-basis: 35%;
+        }
+
+        &__widget {
+            flex-basis: 35%;
         }
     }
 }
