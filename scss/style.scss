@@ -378,7 +378,7 @@ header {
 
     &__filter {
         margin-top: 0;
-        margin-bottom: 40/1170 * 100%;
+        margin-bottom: 15/1170 * 100%;
     }
 
     &__container {
@@ -386,16 +386,12 @@ header {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 40/1170 * 100%;
+        margin-bottom: 10/1170 * 100%;
     }
 
     &__item {
         flex-basis: 370/1170 * 100%;
-    }
-
-    &__item:nth-child(1),
-    &__item:nth-child(2),
-    &__item:nth-child(3) {
+        min-width: 280px;
         margin-bottom: 30/1170 * 100%;
     }
 
@@ -489,6 +485,13 @@ header {
     padding: 0;
     background: none;
     margin: 0 15/370 * 100%;
+    width: 26/370 * 100%;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .filter {
@@ -498,6 +501,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     &__item {
         text-transform: capitalize;
@@ -510,6 +514,7 @@ header {
         margin: 0 5px;
         transition: all 0.3s ease-out;
         background: none;
+        margin-bottom: 25/1170 * 100%;
     }
 
     &__item.current {
@@ -597,7 +602,7 @@ header {
 .feature {
     &__list {
         list-style: none;
-        padding-left: 50px;
+        padding-left: 50/697 * 100%;
         margin: 0;
         font-family: "Montserrat", sans-serif;
         color: #8c8c8c;
@@ -631,6 +636,7 @@ header {
 
     &__item {
         flex-basis: 140/930 * 100%;
+        min-width: 140px;
     }
 
     &__image {
@@ -701,9 +707,10 @@ header {
 
     &__photo {
         position: relative;
+        @include adaptiv-width(370, 280, 768);
 
         img {
-            @include adaptiv-width(370, 280, 768);
+            width: 100%;
         }
     }
 
@@ -913,6 +920,7 @@ footer {
         flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
         margin-top: 28/1170 * 100%;
+        min-width: 270px;
     }
 
     &__title {
@@ -970,6 +978,7 @@ footer {
     &__twitter {
         flex-basis: 272/1170 * 100%;
         margin-top: 28/1170 * 100%;
+        min-width: 270px;
     }
 
     .twitter {
@@ -996,6 +1005,7 @@ footer {
             line-height: 20px;
             margin-bottom: 23/272 * 100%;
             transition: all 0.3s ease-out;
+            margin-top: 0;
         }
 
         &__item {
@@ -1025,6 +1035,7 @@ footer {
         flex-basis: 271/1170 * 100%;
         flex-shrink: 0;
         margin-top: 28/1170 * 100%;
+        min-width: 270px;
     }
 
     .widget {
@@ -1117,9 +1128,22 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
 
-        &__image,
-        img {
+        &__image {
             width: 75%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media all and (max-width: 1070px) {
+    .counters {
+        justify-content: space-around;
+
+        &__item {
+            margin-bottom: 5%;
         }
     }
 }
@@ -1142,6 +1166,7 @@ footer {
         &__main {
             flex-basis: 45%;
             margin-bottom: 5%;
+            min-width: 270px;
         }
 
         &__posts {
@@ -1155,6 +1180,19 @@ footer {
 
         &__widget {
             flex-basis: 35%;
+        }
+    }
+}
+
+@media all and (max-width: 824px) {
+    .projects {
+        &__container {
+            justify-content: space-around;
+            margin-bottom: 0;
+        }
+
+        &__item {
+            margin-bottom: 5%;
         }
     }
 }
@@ -1184,7 +1222,7 @@ footer {
     .header {
         &__buttons {
             margin-left: auto;
-            flex-basis: 8%;
+            flex-basis: 10%;
         }
     }
 
@@ -1221,7 +1259,7 @@ footer {
     }
 
     header {
-        padding-right: 5%;
+        padding: 3% 5%;
     }
 
     .nav {
@@ -1259,5 +1297,163 @@ footer {
 
     .nav.visible {
         transform: scale(1);
+    }
+
+    //content style
+
+    .projects {
+        padding: 5%;
+    }
+
+    .info {
+        padding: 40/767 * 100% 50/767 * 100%;
+    }
+
+    .offer {
+        padding: 5%;
+        flex-wrap: wrap;
+
+        &__container {
+            min-width: 300px;
+        }
+    }
+
+    .poster {
+        padding: 30/768 * 100% 0 0;
+
+        &__text,
+        &__title {
+            padding: 0 20/768 * 100%;
+        }
+    }
+
+    .posts {
+        padding: 40/768 * 100% 50/768 * 100%;
+
+        &__item {
+            min-width: 280px;
+        }
+
+        &__photo {
+            width: 100%;
+        }
+    }
+
+    .info {
+        .posts {
+            &__item {
+                min-width: 0;
+            }
+        }
+    }
+
+    .partners {
+        padding: 0 40/768 * 100%;
+    }
+
+    .counters {
+        padding: 50/768 * 100% 75/768 * 100% 35/768 * 100%;
+    }
+}
+
+@media all and (max-width: 679px) {
+    .offer {
+        display: block;
+        text-align: center;
+
+        &__container {
+            margin-bottom: 5%;
+        }
+    }
+}
+
+@media all and (max-width: 644px) {
+    .info {
+        display: block;
+
+        &__label {
+            margin-bottom: 5%;
+        }
+
+        &__text {
+            margin-bottom: 5%;
+        }
+
+        &__main {
+            margin-bottom: 10%;
+        }
+
+        &__title {
+            margin-bottom: 5%;
+        }
+
+        .posts__text {
+            margin-bottom: 3%;
+        }
+
+        &__posts {
+            margin-bottom: 10%;
+        }
+
+        &__twitter {
+            margin-bottom: 10%;
+        }
+
+        .twitter {
+            &__date {
+                margin-bottom: 4%;
+            }
+
+            &__item:last-child {
+                margin-bottom: 10%;
+            }
+        }
+
+        .widget {
+            &__item {
+                min-width: 200px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .mobile {
+        padding: 30/480 * 100% 30/480 * 100% 20/480 * 100%;
+    }
+}
+
+@media all and (max-width: 469px) {
+    .offer {
+        &__text,
+        &__title {
+            line-height: normal;
+        }
+    }
+}
+
+@media all and (max-width: 459px) {
+    .info {
+        .widget {
+            &__item {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 394px) {
+    .poster {
+        &__title {
+            line-height: normal;
+        }
+    }
+}
+
+@media all and (max-width: 348px) {
+    .mobile {
+        &__title {
+            line-height: normal;
+        }
     }
 }
